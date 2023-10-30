@@ -10,13 +10,13 @@ resource "aws_instance" "task" {
 
 resource "aws_subnet" "default" {
   vpc_id                  = aws_vpc.default.id
-  cidr_block              = "172.31.16.0/20" 
+  cidr_block              = "172.31.16.0/20" # default subnet cidr on your instance
   availability_zone       = "ap-south-1b" 
   map_public_ip_on_launch = true
 }
 
 resource "aws_vpc" "default" {
-  cidr_block = "172.31.0.0/16"  
+  cidr_block = "172.31.0.0/16"  # default vpc cidr on your instance
   enable_dns_support = true
   enable_dns_hostnames = true
 }
